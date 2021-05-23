@@ -1,0 +1,9 @@
+<h3> Je suis {{ nom }} </h3>
+
+<div [hidden]="hd" [style.backgroundColor]="color"> Tek-up </div>
+
+<button (click)="changeHd()" class="btn btn-danger">OK</button>
+
+<input [(ngModel)]="nom" type="text" class="form-control">
+<br>
+<button (click)="EnvoyerMsg()" class="btn btn-primary">Send To Parent</button>
