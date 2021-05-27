@@ -9,9 +9,10 @@ import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DetailComponent } from './detail/detail.component';
+import { DirectComponent } from './direct/direct.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ParentComponent, CvComponent, ListeComponent, ItemComponent, DetailComponent],
+  declarations: [AppComponent, FirstComponent, ParentComponent, CvComponent, ListeComponent, ItemComponent, DetailComponent, DirectComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
