@@ -1,0 +1,20 @@
+<div [ngStyle]="{
+    backgroundColor: bgColor,
+    color : textColor,
+    fontSize : size,
+    fontFamily : fontFamily
+}">
+    Exercice Ms-Word
+</div>
+<br><br>
+Background Color :<br>
+<input type="text" class="form-control" [(ngModel)]="bgColor">
+Text Color :<br>
+<input type="text" class="form-control" [(ngModel)]="textColor">
+Font Size :<br>
+<input #inp (change)="changeSize(inp)" type="number" class="form-control">
+
+Font Family : <br>
+<select class="form-control" [(ngModel)]="fontFamily">
+    <option *ngFor="let font of listFonts" [value]="font">{{font}}</option>
+</select>
