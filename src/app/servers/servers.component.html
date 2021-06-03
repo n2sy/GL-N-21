@@ -1,8 +1,8 @@
 <div class="container">
     <ol>
         <li class=" list-group-item" [ngClass]="changeClass(serv)" *ngFor="let serv of tabServers">
-            {{serv.nom}} | {{serv.type}} | {{serv.startDate}}
-            <span class="badge badge-secondary">{{serv.status}}</span>
+            {{serv.nom | short}} | {{serv.type}} | {{serv.startDate | date:'fullDate' | uppercase }}
+            <span class="badge bg-secondary">{{serv.status}}</span>
         </li>
 
     </ol>

@@ -8,28 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   tabServers = [
     {
-      nom: 'Production Server',
+      nom: 'production server',
       type: 'small',
-      startDate: Date(),
+      startDate: new Date(),
       status: 'stable',
     },
     {
       nom: 'Testing Server',
       type: 'medium',
-      startDate: Date(),
-      status: 'stable',
+      startDate: new Date(),
+      status: 'critical',
     },
     {
       nom: 'Development Server',
       type: 'small',
-      startDate: Date(),
+      startDate: new Date(),
       status: 'stable',
     },
     {
       nom: 'Nidhal Server',
       type: 'large',
-      startDate: Date(),
-      status: 'stable',
+      startDate: new Date(),
+      status: 'offline',
     },
   ];
   constructor() {}
