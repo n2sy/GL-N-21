@@ -15,11 +15,28 @@ import { ServersComponent } from './servers/servers.component';
 import { CustomDirDirective } from './custom-dir.directive';
 import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
+import { FirstService } from './services/first.service';
+import { RecruterComponent } from './recruter/recruter.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ParentComponent, CvComponent, ListeComponent, ItemComponent, DetailComponent, DirectComponent, MsWordComponent, ServersComponent, CustomDirDirective, ShortPipe, FilterPipe],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    ParentComponent,
+    CvComponent,
+    ListeComponent,
+    ItemComponent,
+    DetailComponent,
+    DirectComponent,
+    MsWordComponent,
+    ServersComponent,
+    CustomDirDirective,
+    ShortPipe,
+    FilterPipe,
+    RecruterComponent,
+  ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [FirstService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

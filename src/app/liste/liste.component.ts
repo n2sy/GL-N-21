@@ -1,19 +1,27 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Personne } from '../models/personne';
+import { ListPersonnesService } from '../services/list-personnes.service';
 
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
+  providers: [ListPersonnesService],
 })
 export class ListeComponent implements OnInit {
-  @Input() tabPersonne: Personne[] = [];
+  tabPersonne: Personne[] = [];
   @Output() msgToCv = new EventEmitter<Personne>();
-  constructor() {}
+  constructor(private listPers: ListPersonnesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tabPersonne = this.listPers.getListPersonnes();
+  }
 
   RecupPersonneFromItem(pers) {
     this.msgToCv.emit(pers);
+  }
+
+  listFromList() {
+    console.log(this.listPers.getListPersonnes());
   }
 }

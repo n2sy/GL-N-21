@@ -1,8 +1,11 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste (msgToCv)="RecupPersonneFromListe($event)" [tabPersonne]="listePersonne"></app-liste>
+        <app-liste (msgToCv)="RecupPersonneFromListe($event)"></app-liste>
     </div>
     <div class="col-md-7">
         <app-detail [persSelected]="selectedPersonne"></app-detail>
     </div>
 </div>
+
+<!-- <button class="btn btn-primary" (click)="addNewPerson()">Add New Person</button>
+<button class="btn btn-success" (click)="listFromCV()">List From CV</button> -->

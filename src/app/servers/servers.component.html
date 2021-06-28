@@ -1,8 +1,9 @@
 <div class="container">
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" [(ngModel)]="selectedStatus">
     <br>
     <ol>
-        <li class=" list-group-item" [ngClass]="changeClass(serv)" *ngFor="let serv of tabServers | filter">
+        <li class=" list-group-item" [ngClass]="changeClass(serv)"
+            *ngFor="let serv of tabServers | filter:selectedStatus">
             {{serv.nom | short:12}} | {{serv.type}} | {{serv.startDate | date:'fullDate' | uppercase }}
             <span class="badge bg-secondary">{{serv.status}}</span>
         </li>
