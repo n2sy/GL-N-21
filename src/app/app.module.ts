@@ -17,6 +17,12 @@ import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
 import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
+import { HomeComponent } from './home/home.component';
+import { APP_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
+import { NoImagePipe } from './no-image.pipe';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +40,13 @@ import { RecruterComponent } from './recruter/recruter.component';
     ShortPipe,
     FilterPipe,
     RecruterComponent,
+    HomeComponent,
+    NavbarComponent,
+    InfosComponent,
+    NoImagePipe,
+    UpdateComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, APP_ROUTING],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })

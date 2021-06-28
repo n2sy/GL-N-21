@@ -9,6 +9,7 @@ export class ListPersonnesService {
     new Personne('1', 'Nidhal', 'Jelassi', 35, 'Enseignant', 'nidhal.jpg'),
     new Personne('2', 'Bart', 'Simpson', 15, 'Chef de projet', 'bart.jpeg'),
     new Personne('3', 'Homer', 'Simpson', 66, 'Ingénieur', 'homer.jpg'),
+    new Personne('4', 'Marge', 'Simpson', 66, 'PDG'),
   ];
 
   constructor() {}
@@ -17,9 +18,13 @@ export class ListPersonnesService {
     return this.listePersonne;
   }
 
-  addPerson() {
-    this.listePersonne.push(
-      new Personne('1', 'NEW', 'Person', 35, 'Enseignant', 'nidhal.jpg')
-    );
+  getPersonneById(id) {
+    return this.listePersonne.find((p) => p._id == id);
   }
+
+  // addPerson() {
+  //   this.listePersonne.push(
+  //     new Personne('1', 'NEW', 'Person', 35, 'Enseignant', 'nidhal.jpg')
+  //   );
+  // }
 }

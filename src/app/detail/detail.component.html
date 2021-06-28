@@ -5,7 +5,7 @@
                 <img src="../../assets/rotating_card_thumb2.png" />
             </div>
             <div class="user">
-                <img class="img-circle" src="../../assets/{{persSelected.avatar}}" />
+                <img class="img-circle" src="../../assets/{{persSelected.avatar | noImage}}" />
             </div>
             <div class="content">
                 <div class="main">
@@ -56,6 +56,8 @@
             <div class="footer">
                 <div class="social-links text-center">
                     <button (click)="addNewRecrue()" class="btn btn-success">Recruter</button>
+                    <button (click)="goToInfos()" class="btn btn-primary">Details</button>
+                    <button [routerLink]="['/cv', persSelected._id]" class="btn btn-info">++</button>
                 </div>
             </div>
         </div> <!-- end back panel -->

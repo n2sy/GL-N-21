@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a routerLink="/" class="nav-link" routerLinkActive="active"
+            [routerLinkActiveOptions]="{'exact' : true}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['cv']" class="nav-link" routerLinkActive="active">CV</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['servers']" routerLinkActive="active">Servers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['word']" routerLinkActive="active">Ms-Word</a>
+    </li>
+</ul>
