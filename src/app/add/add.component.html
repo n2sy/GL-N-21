@@ -1,0 +1,25 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="addNewPerson(f.value)">
+        <label for="nom">Nom</label>
+        <input ngModel required type="text" class="form-control" id="nom" name="nom">
+
+        <label for="prenom">Prénom</label>
+        <input ngModel required type="text" class="form-control" id="prenom" name="prenom">
+
+        <label for="age">Age</label>
+        <input ngModel type="number" class="form-control" id="age" name="age">
+
+        <label for="profession">Profession</label>
+        <input ngModel required type="text" class="form-control" id="profession" name="profession">
+
+        <label for="path">Url de l'avatar</label>
+        <input ngModel type="text" class="form-control" id="path" name="avatar">
+
+        <button class="btn btn-primary">
+            Ajouter
+        </button>
+        <!-- <button (click)="resetForm(f)" class="btn btn-primary">
+            Reset
+        </button> -->
+    </form>
+</div>

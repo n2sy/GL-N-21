@@ -1,0 +1,13 @@
+<form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+
+
+    <label for="login">Login</label>
+    <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
+    <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+    <label for="login">Mot de passe</label>
+    <input ngModel type="text" class="form-control" id="pwd" name="password">
+
+
+    <button [disabled]="f.invalid" class="btn btn-primary">Se Connecter</button>
+</form>

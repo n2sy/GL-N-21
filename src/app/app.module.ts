@@ -23,6 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
 import { NoImagePipe } from './no-image.pipe';
 import { UpdateComponent } from './update/update.component';
+import { LoginComponent } from './login/login.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { UpdateComponent } from './update/update.component';
     InfosComponent,
     NoImagePipe,
     UpdateComponent,
+    LoginComponent,
+    AddComponent,
   ],
   imports: [BrowserModule, FormsModule, APP_ROUTING],
   providers: [FirstService],

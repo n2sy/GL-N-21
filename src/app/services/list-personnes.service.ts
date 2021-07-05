@@ -22,9 +22,24 @@ export class ListPersonnesService {
     return this.listePersonne.find((p) => p._id == id);
   }
 
+  addPerson(p) {
+    p._id = this.listePersonne[this.listePersonne.length - 1]._id + 1;
+    this.listePersonne.push(p);
+  }
+
   // addPerson() {
   //   this.listePersonne.push(
   //     new Personne('1', 'NEW', 'Person', 35, 'Enseignant', 'nidhal.jpg')
   //   );
   // }
+
+  deletePerson(p) {
+    let i = this.listePersonne.indexOf(p);
+    this.listePersonne.splice(i, 1);
+  }
+
+  updatePerson(p) {
+    let i = this.listePersonne.indexOf(p);
+    this.listePersonne[i] = p;
+  }
 }

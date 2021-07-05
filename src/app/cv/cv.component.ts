@@ -25,10 +25,6 @@ export class CvComponent implements OnInit {
     // this.secondServ.afficherInfos();
   }
 
-  addNewPerson() {
-    this.listPers.addPerson();
-  }
-
   listFromCV() {
     console.log(this.listPers.getListPersonnes());
   }

@@ -6,7 +6,6 @@ import { ListPersonnesService } from '../services/list-personnes.service';
   selector: 'app-liste',
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
-  providers: [ListPersonnesService],
 })
 export class ListeComponent implements OnInit {
   tabPersonne: Personne[] = [];
