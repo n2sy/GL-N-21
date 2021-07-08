@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Candidats</h3>
+            <div cdkDropList #candlist="cdkDropList" [cdkDropListData]="tabCandidats"
+                [cdkDropListConnectedTo]="[reclist, reflist]" class="example-list"
+                (cdkDropListEntered)="changeStatus($event, 'candidat')" (cdkDropListDropped)="drop($event)">
+                <div class="example-box alert alert-primary" *ngFor="let cand of tabCandidats" [cdkDragData]="cand"
+                    cdkDrag>
+                    <img src="../../assets/{{cand.avatar | noImage}}"> {{ cand.prenom}} {{ cand.nom}}
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Recrues</h3>
+            <div cdkDropList #reclist="cdkDropList" [cdkDropListData]="tabRecrues" [cdkDropListConnectedTo]="[reflist]"
+                class="example-list" (cdkDropListDropped)="drop($event)"
+                (cdkDropListEntered)="changeStatus($event, 'recrue')">
+                <div class="example-box alert alert-success" *ngFor="let rec of tabRecrues" [cdkDragData]="rec" cdkDrag>
+                    <img src="../../assets/{{rec.avatar | noImage}}"> {{ rec.prenom}} {{ rec.nom}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Refusés</h3>
+            <div cdkDropList #reflist="cdkDropList" [cdkDropListData]="tabRefuses" [cdkDropListConnectedTo]="[reclist]"
+                class="example-list" (cdkDropListDropped)="drop($event)"
+                (cdkDropListEntered)="changeStatus($event, 'refuse')">
+                <div class="example-box alert alert-danger" *ngFor="let ref of tabRefuses" [cdkDragData]="ref" cdkDrag>
+                    <img src="../../assets/{{ref.avatar | noImage}}"> {{ ref.prenom}} {{ ref.nom}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

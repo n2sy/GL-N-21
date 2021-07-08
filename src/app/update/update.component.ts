@@ -16,13 +16,31 @@ export class UpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.actRoute.paramMap.subscribe((par) => {
-      this.pers = this.persServ.getPersonneById(par.get('id'));
-    });
+    this.actRoute.paramMap.subscribe(
+      (par) => {
+        this.pers = this.persServ.getPersonneByIdAPI(par.get('id')).subscribe(
+          (response) => {
+            this.pers = response;
+          },
+          (error) => {
+            console.log('Problem with getPersonById');
+          }
+        );
+      },
+      (error) => {
+        console.log('Problem with paramMap');
+      }
+    );
   }
 
   updatePerson() {
-    this.persServ.updatePerson(this.pers);
-    this.router.navigateByUrl('/cv');
+    this.persServ.updatePersonAPI(this.pers).subscribe(
+      (response) => {
+        this.router.navigateByUrl('/cv');
+      },
+      (error) => {
+        console.log('Problem with updatePerson');
+      }
+    );
   }
 }

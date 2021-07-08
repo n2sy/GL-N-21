@@ -1,5 +1,5 @@
-<form #f="ngForm" (ngSubmit)="onLogin(f.value)">
-    <div *ngIf="hd" class="alert alert-danger">Login et/ou Mot de passe erronés</div>
+<form #f="ngForm" (ngSubmit)="onRegister(f.value)">
+
 
     <label for="login">Login</label>
     <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
@@ -9,5 +9,5 @@
     <input ngModel type="text" class="form-control" id="pwd" name="password">
 
 
-    <button [disabled]="f.invalid" class="btn btn-primary">Se Connecter</button>
+    <button [disabled]="f.invalid" class="btn btn-primary">S'inscrire</button>
 </form>

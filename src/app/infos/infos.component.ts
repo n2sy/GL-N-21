@@ -11,7 +11,7 @@ import { ListPersonnesService } from '../services/list-personnes.service';
 })
 export class InfosComponent implements OnInit {
   i;
-  pers: Personne;
+  pers;
   constructor(
     private actRoute: ActivatedRoute,
     private router: Router,
@@ -25,10 +25,22 @@ export class InfosComponent implements OnInit {
     //this.actRoute.snapshot.params['id'];
 
     /* OBSERVABLE */
-    this.actRoute.paramMap.subscribe((p: ParamMap) => {
-      //this.i = p.get('id');
-      this.pers = this.persServ.getPersonneById(p.get('id'));
-    });
+    this.actRoute.paramMap.subscribe(
+      (p: ParamMap) => {
+        //this.i = p.get('id');
+        this.persServ.getPersonneByIdAPI(p.get('id')).subscribe(
+          (response) => {
+            this.pers = response;
+          },
+          (error) => {
+            console.log('Problem with getPersonById');
+          }
+        );
+      },
+      (error) => {
+        console.log('Error with paramMap');
+      }
+    );
 
     // this.actRoute.params.subscribe((p: Params) => {
     //   console.log(p['id']);
@@ -38,8 +50,16 @@ export class InfosComponent implements OnInit {
 
   deletePerson() {
     if (confirm('Etes-vous sûr de vouloir supprimer cette personne ?')) {
-      this.persServ.deletePerson(this.pers);
-      this.router.navigateByUrl('/cv');
+      this.persServ.deletePersonAPI(this.pers._id).subscribe(
+        (response) => {
+          console.log(response);
+
+          this.router.navigateByUrl('/cv');
+        },
+        (error) => {
+          console.log('Problem with deletePerson');
+        }
+      );
     }
   }
 

@@ -14,8 +14,14 @@ export class AddComponent implements OnInit {
 
   addNewPerson(p) {
     console.log(p);
-    this.persServ.addPerson(p);
-    this.router.navigateByUrl('/cv');
+    this.persServ.addPersonAPI(p).subscribe(
+      (response) => {
+        this.router.navigateByUrl('/cv');
+      },
+      (error) => {
+        console.log('Problem with AddPerson');
+      }
+    );
   }
   resetForm(f) {
     f.reset();

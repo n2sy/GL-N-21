@@ -5,6 +5,7 @@ export class Personne {
     public nom: string,
     public age: number,
     public profession: string,
-    public avatar?: string
+    public avatar?: string,
+    public statut?: string
   ) {}
 }

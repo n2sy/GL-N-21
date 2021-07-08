@@ -25,6 +25,14 @@ import { NoImagePipe } from './no-image.pipe';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
 import { AddComponent } from './add/add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
+import { AuthInterceptorProvider } from './logtoken.interceptor';
+import { LoginGuard } from './guards/login.guard';
+import { LogoutGuard } from './guards/logout.guard';
+import { LogDeactiveGuard } from './guards/log-deactive.guard';
+import { RhComponent } from './rh/rh.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -49,9 +57,22 @@ import { AddComponent } from './add/add.component';
     UpdateComponent,
     LoginComponent,
     AddComponent,
+    RegisterComponent,
+    RhComponent,
   ],
-  imports: [BrowserModule, FormsModule, APP_ROUTING],
-  providers: [FirstService],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    APP_ROUTING,
+    DragDropModule,
+  ],
+  providers: [
+    FirstService,
+    AuthInterceptorProvider,
+    LogoutGuard,
+    LogDeactiveGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
